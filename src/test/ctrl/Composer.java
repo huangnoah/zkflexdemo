@@ -1,15 +1,16 @@
 package test.ctrl;
 
-import static test.cases.HFlexVFlexGenerator.newLayoutCase;
-import static test.cases.HFlexVFlexGenerator.newMinFlexCase;
-import static test.cases.HFlexVFlexGenerator.newVFlexCase;
-
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zul.Combobox;
 import org.zkoss.zul.Window;
+
+import test.cases.FlexCase;
+import test.cases.LayoutCase;
+import test.cases.MinFlexCase;
+import test.cases.VFlexCase;
 
 public class Composer extends SelectorComposer {
 
@@ -24,7 +25,7 @@ public class Composer extends SelectorComposer {
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
-		newVFlexCase(main, "Div");
+		appendCase(new VFlexCase("Div"));
 	}
 	
 	private void reset() {
@@ -40,6 +41,11 @@ public class Composer extends SelectorComposer {
 			main.removeChild(anotherLastChild);
 		}
 	}
+	
+	private void appendCase(FlexCase flexcase) {
+		main.appendChild(flexcase.getView());
+		main.appendChild(flexcase.getCodeView());
+	}
 
 	@Listen("onChange= #testcase; onChange= #component; onChange= #layout")
 	public void generate() throws Exception {
@@ -48,13 +54,13 @@ public class Composer extends SelectorComposer {
 		String layoutVal = layout.getValue().toString();
 		if (testcaseVal.equalsIgnoreCase("VFlexCase")) {
 			reset();
-			newVFlexCase(main, componentVal);
+			appendCase(new VFlexCase(componentVal));
 		} else if (testcaseVal.equalsIgnoreCase("LayoutCase")) {
 			reset();
-			newLayoutCase(main, componentVal, layoutVal);
+			appendCase(new LayoutCase(componentVal, layoutVal));
 		} else if (testcaseVal.equalsIgnoreCase("MinFlexCase")) {
 			reset();
-			newMinFlexCase(main, componentVal, layoutVal);
+			appendCase(new MinFlexCase(componentVal, layoutVal));
 		}
 	}
 

@@ -6,7 +6,7 @@
 			"Panel", "Window", "Groupbox", "Tabbox", "Hlayout", "Hbox",
 			"Vlayout", "Vbox" }));
 	ListModelList layouts = new ListModelList(Arrays.asList(new String[] {
-			"Hlayout", "Hbox", "Vlayout", "Vbox", "Hflex", "Vflex" }));
+			"Hlayout", "Hbox", "Vlayout", "Vbox" }));
 ]]>
     </zscript>
 	<label value="cases" />
