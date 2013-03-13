@@ -2,10 +2,11 @@
 	<zscript><![CDATA[
 	ListModelList cases = new ListModelList(Arrays.asList(new String[] {
 			"VFlexCase", "LayoutCase", "MinFlexCase" }));
-	ListModelList comps = new ListModelList(Arrays.asList(new String[] { "div",
-			"panel", "window", "groupbox", "tabbox" }));
+	ListModelList comps = new ListModelList(Arrays.asList(new String[] { "Div",
+			"Panel", "Window", "Groupbox", "Tabbox", "Hlayout", "Hbox",
+			"Vlayout", "Vbox" }));
 	ListModelList layouts = new ListModelList(Arrays.asList(new String[] {
-			"hlayout", "hbox", "vlayout", "vbox", "hflex", "vflex" }));
+			"Hlayout", "Hbox", "Vlayout", "Vbox", "Hflex", "Vflex" }));
 ]]>
     </zscript>
 	<label value="cases" />

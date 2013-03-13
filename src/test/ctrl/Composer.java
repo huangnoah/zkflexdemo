@@ -24,7 +24,7 @@ public class Composer extends SelectorComposer {
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
-		newVFlexCase(main, "panel");
+		newVFlexCase(main, "Div");
 	}
 	
 	private void reset() {
@@ -42,7 +42,7 @@ public class Composer extends SelectorComposer {
 	}
 
 	@Listen("onChange= #testcase; onChange= #component; onChange= #layout")
-	public void generate() {
+	public void generate() throws Exception {
 		String testcaseVal = testcase.getValue().toString();
 		String componentVal = component.getValue().toString();
 		String layoutVal = layout.getValue().toString();
