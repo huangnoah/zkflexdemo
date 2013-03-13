@@ -1,0 +1,35 @@
+<window id="main" apply="test.ctrl.Composer">
+	<zscript><![CDATA[
+	ListModelList cases = new ListModelList(Arrays.asList(new String[] {
+			"VFlexCase", "LayoutCase", "MinFlexCase" }));
+	ListModelList comps = new ListModelList(Arrays.asList(new String[] { "div",
+			"panel", "window", "groupbox", "tabbox" }));
+	ListModelList layouts = new ListModelList(Arrays.asList(new String[] {
+			"hlayout", "hbox", "vlayout", "vbox", "hflex", "vflex" }));
+]]>
+    </zscript>
+	<label value="cases" />
+	<combobox id="testcase" width="150px" model="${cases}"
+		readonly="true" onAfterRender="self.setSelectedIndex(0)">
+		<attribute name="onChange"><![CDATA[
+	if ("VFlexCase".equalsIgnoreCase(self.getSelectedItem().getValue()
+			.toString())) {
+		layout.setDisabled(true);
+	} else {
+		if (layout.isDisabled()) {
+			layout.setDisabled(false);
+			layout.setValue(layouts.get(0).toString());
+		}
+	}
+]]></attribute>
+	</combobox>
+	<label value="component" />
+	<combobox id="component" width="150px" model="${comps}"
+		readonly="true" onAfterRender="self.setSelectedIndex(0)">
+	</combobox>
+	<label value="layout" />
+	<combobox id="layout" width="150px" model="${layouts}"
+		onAfterRender="self.setSelectedIndex(0)" readonly="true"
+		disabled="true">
+	</combobox>
+</window>
