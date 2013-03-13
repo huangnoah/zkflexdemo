@@ -1,8 +1,5 @@
 package test.cases;
 
-import static test.util.XMLConverter.unapplyXML;
-
-import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
@@ -198,7 +195,7 @@ public class HFlexVFlexGenerator {
 	}
 
 	public static Window generateCodeView(HtmlBasedComponent layout) {
-		String code = unapplyXML(layout);
+		String code = new test.util.XMLConverter(layout).toXML();
 		Window codeView = generateView("Code View");
 		code = Pattern.compile("<").matcher(code).replaceAll("&lt;");
 		code = Pattern.compile(">").matcher(code).replaceAll("&gt;");
