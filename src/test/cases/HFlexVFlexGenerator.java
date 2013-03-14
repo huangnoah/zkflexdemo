@@ -1,5 +1,6 @@
 package test.cases;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -15,11 +16,14 @@ import org.zkoss.zul.Calendar;
 import org.zkoss.zul.Combobox;
 import org.zkoss.zul.Comboitem;
 import org.zkoss.zul.Datebox;
+import org.zkoss.zul.Decimalbox;
 import org.zkoss.zul.Div;
+import org.zkoss.zul.Doublebox;
 import org.zkoss.zul.Groupbox;
 import org.zkoss.zul.Hbox;
 import org.zkoss.zul.Hlayout;
 import org.zkoss.zul.Html;
+import org.zkoss.zul.Intbox;
 import org.zkoss.zul.Label;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
@@ -27,6 +31,7 @@ import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Listhead;
 import org.zkoss.zul.Listheader;
 import org.zkoss.zul.Listitem;
+import org.zkoss.zul.Longbox;
 import org.zkoss.zul.Panel;
 import org.zkoss.zul.Panelchildren;
 import org.zkoss.zul.Tab;
@@ -34,6 +39,8 @@ import org.zkoss.zul.Tabbox;
 import org.zkoss.zul.Tabpanel;
 import org.zkoss.zul.Tabpanels;
 import org.zkoss.zul.Tabs;
+import org.zkoss.zul.Textbox;
+import org.zkoss.zul.Timebox;
 import org.zkoss.zul.Vbox;
 import org.zkoss.zul.Vlayout;
 import org.zkoss.zul.Window;
@@ -55,6 +62,12 @@ public class HFlexVFlexGenerator {
 	public static final String colorbox = "Colorbox";
 	public static final String combobox = "Combobox";
 	public static final String datebox = "Datebox";
+	public static final String decimalbox = "Decimalbox";
+	public static final String doublebox = "Doublebox";
+	public static final String intbox = "Intbox";
+	public static final String longbox = "Longbox";
+	public static final String textbox = "Textbox";
+	public static final String timebox = "Timebox";
 
 	private static HtmlBasedComponent generateElement(String comp,
 			String style, boolean isDiv) throws Exception {
@@ -88,7 +101,19 @@ public class HFlexVFlexGenerator {
 			return tabbox;
 
 			// input
-		} else if(datebox.equalsIgnoreCase(comp)) {
+		} else if (decimalbox.equalsIgnoreCase(comp)) {
+			return new Decimalbox(new BigDecimal(1111111111111L));
+		} else if (doublebox.equalsIgnoreCase(comp)) {
+			return new Doublebox(1.1);
+		} else if (intbox.equalsIgnoreCase(comp)) {
+			return new Intbox(1);
+		} else if (longbox.equalsIgnoreCase(comp)) {
+			return new Longbox(1111111111111L);
+		} else if (textbox.equalsIgnoreCase(comp)) {
+			return new Textbox("1");
+		} else if (timebox.equalsIgnoreCase(comp)) {
+			return new Timebox();
+		} else if (datebox.equalsIgnoreCase(comp)) {
 			return new Datebox();
 		} else if (combobox.equalsIgnoreCase(comp)) {
 			Combobox combobox = new Combobox();
