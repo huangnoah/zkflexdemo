@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 import org.zkoss.lang.Strings;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.HtmlBasedComponent;
+import org.zkoss.zkex.zul.Colorbox;
 import org.zkoss.zkmax.zul.Chosenbox;
 import org.zkoss.zul.Bandbox;
 import org.zkoss.zul.Bandpopup;
@@ -48,6 +49,7 @@ public class HFlexVFlexGenerator {
 	public static final String bandbox = "Bandbox";
 	public static final String calendar = "Calendar";
 	public static final String chosenbox = "Chosenbox";
+	public static final String colorbox = "Colorbox";
 
 	private static HtmlBasedComponent generateElement(String comp,
 			String style, boolean isDiv) throws Exception {
@@ -88,6 +90,8 @@ public class HFlexVFlexGenerator {
 			chosenbox.setModel(new ListModelList(Arrays.asList(new String[] {
 					"apple", "banana" })));
 			return chosenbox;
+		} else if (colorbox.equalsIgnoreCase(comp)) {
+			return new Colorbox();
 		} else if (bandbox.equalsIgnoreCase(comp)) {
 			Bandbox bandbox = new Bandbox();
 			Bandpopup bandpopup = new Bandpopup();
