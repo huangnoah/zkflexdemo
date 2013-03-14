@@ -5,8 +5,8 @@
 	ListModelList comps = new ListModelList(Arrays.asList(new String[] { "Div",
 			"Panel", "Window", "Groupbox", "Tabbox", "Hlayout", "Hbox",
 			"Vlayout", "Vbox" }));
-	ListModelList inputs = new ListModelList(
-			Arrays.asList(new String[] { "Bandbox", "Calendar", "Chosenbox", "Colorbox" }));
+	ListModelList inputs = new ListModelList(Arrays.asList(new String[] {
+			"Bandbox", "Calendar", "Chosenbox", "Colorbox", "Combobox" }));
 	ListModelList layouts = new ListModelList(Arrays.asList(new String[] {
 			"Hlayout", "Hbox", "Vlayout", "Vbox" }));
 ]]>
@@ -17,14 +17,14 @@
 		<attribute name="onChange"><![CDATA[
 	String seldVal = self.getSelectedItem().getValue().toString();
 	ListModelList model = component.getModel();
-	 if ("InputHFlexCase".equalsIgnoreCase(seldVal)) {
+	if ("InputHFlexCase".equalsIgnoreCase(seldVal)) {
 		layout.setDisabled(true);
-		if(!inputs.equals(model)){
+		if (!inputs.equals(model)) {
 			component.setModel(inputs);
 			component.setValue(inputs.get(0).toString());
 		}
 	} else {
-		if(!comps.equals(model)){
+		if (!comps.equals(model)) {
 			component.setModel(comps);
 			component.setValue(layouts.get(0).toString());
 		}

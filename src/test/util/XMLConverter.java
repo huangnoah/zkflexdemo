@@ -9,8 +9,7 @@ import nu.xom.Element;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.HtmlBasedComponent;
 import org.zkoss.zul.Label;
-import org.zkoss.zul.Listcell;
-import org.zkoss.zul.Listheader;
+import org.zkoss.zul.impl.LabelElement;
 
 public class XMLConverter {
 	
@@ -29,10 +28,8 @@ public class XMLConverter {
 		setAttrIfExists(elem, "style", comp.getStyle());
 		if (comp instanceof Label) {
 			setAttrIfExists(elem, "value", ((Label) comp).getValue());
-		} else if (comp instanceof Listheader) {
-			setAttrIfExists(elem, "label", ((Listheader) comp).getLabel());
-		} else if (comp instanceof Listcell) {
-			setAttrIfExists(elem, "label", ((Listcell) comp).getLabel());
+		} else if (comp instanceof LabelElement) {
+			setAttrIfExists(elem, "label", ((LabelElement) comp).getLabel());
 		}
 	}
 

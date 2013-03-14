@@ -12,6 +12,8 @@ import org.zkoss.zkmax.zul.Chosenbox;
 import org.zkoss.zul.Bandbox;
 import org.zkoss.zul.Bandpopup;
 import org.zkoss.zul.Calendar;
+import org.zkoss.zul.Combobox;
+import org.zkoss.zul.Comboitem;
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Groupbox;
 import org.zkoss.zul.Hbox;
@@ -50,6 +52,7 @@ public class HFlexVFlexGenerator {
 	public static final String calendar = "Calendar";
 	public static final String chosenbox = "Chosenbox";
 	public static final String colorbox = "Colorbox";
+	public static final String combobox = "Combobox";
 
 	private static HtmlBasedComponent generateElement(String comp,
 			String style, boolean isDiv) throws Exception {
@@ -83,12 +86,17 @@ public class HFlexVFlexGenerator {
 			return tabbox;
 
 			// input
+		} else if (combobox.equalsIgnoreCase(comp)) {
+			Combobox combobox = new Combobox();
+			Comboitem apple = new Comboitem("apple");
+			Comboitem banana = new Comboitem("banana");
+			combobox.appendChild(apple);
+			combobox.appendChild(banana);
+			return combobox;
 		} else if (calendar.equalsIgnoreCase(comp)) {
 			return new Calendar();
 		} else if (chosenbox.equalsIgnoreCase(comp)) {
 			Chosenbox chosenbox = new Chosenbox();
-			chosenbox.setModel(new ListModelList(Arrays.asList(new String[] {
-					"apple", "banana" })));
 			return chosenbox;
 		} else if (colorbox.equalsIgnoreCase(comp)) {
 			return new Colorbox();
@@ -142,6 +150,8 @@ public class HFlexVFlexGenerator {
 				LayoutCase.applyProperties(layout, div, "hflex");
 			}
 			return layout;
+
+			// default
 		} else {
 			HtmlBasedComponent component = null;
 			try {
@@ -175,6 +185,11 @@ public class HFlexVFlexGenerator {
 			}
 			return component;
 		}
+	}
+
+	private static ListModelList<String> generateListModel() {
+		return new ListModelList<String>(Arrays.asList(new String[] { "apple",
+				"banana" }));
 	}
 
 	public static HtmlBasedComponent generateContent(String comp,
