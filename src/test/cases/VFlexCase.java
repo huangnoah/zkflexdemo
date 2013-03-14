@@ -17,7 +17,8 @@ public class VFlexCase extends FlexCase {
 		view = generateView("Fit-the-Rest Flexibility: { component: " + comp
 				+ " }");
 		view.appendChild(content);
-		codeView = generateCodeView(content);
+		setCode(content);
+		codeView = generateCodeView(content, rawHTMLCode);
 	}
 
 }

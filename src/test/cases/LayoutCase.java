@@ -2,9 +2,9 @@ package test.cases;
 
 import static test.cases.HFlexVFlexGenerator.fixWidthAndHeight;
 import static test.cases.HFlexVFlexGenerator.generateCodeView;
+import static test.cases.HFlexVFlexGenerator.generateContent;
 import static test.cases.HFlexVFlexGenerator.generateLayout;
 import static test.cases.HFlexVFlexGenerator.generateView;
-import static test.cases.HFlexVFlexGenerator.generateContent;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +28,8 @@ public class LayoutCase extends FlexCase {
 		view = generateView("Proportional Flexibility: { component: " + comp
 				+ "}");
 		view.appendChild(layout);
-		codeView = generateCodeView(layout);
+		setCode(layout);
+		codeView = generateCodeView(layout, rawHTMLCode);
 	}
 
 	public static void applyProperties(HtmlBasedComponent layout, String comp,

@@ -28,7 +28,8 @@ public class MinFlexCase extends FlexCase {
 				+ ", layout: " + layoutName + " }");
 		fixWidthAndHeight(layout);
 		view.appendChild(layout);
-		codeView = generateCodeView(layout);
+		setCode(layout);
+		codeView = generateCodeView(layout, rawHTMLCode);
 	}
 
 	private static HtmlBasedComponent applyProperties(

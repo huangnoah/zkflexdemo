@@ -2,6 +2,7 @@ package test.util;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import nu.xom.Attribute;
 import nu.xom.Element;
@@ -97,5 +98,13 @@ public class XMLConverter {
 	public String toXML() {
 		Element root = unapply();
 		return new XMLFormatter(root.toXML()).getXML();
+	}
+	
+	public String toHTML(String xml) {
+		String code = Pattern.compile("<").matcher(xml).replaceAll("&lt;");
+		code = Pattern.compile(">").matcher(code).replaceAll("&gt;");
+		code = Pattern.compile("\\r?\\n").matcher(code).replaceAll("<br/>");
+		code = Pattern.compile("\\s").matcher(code).replaceAll("&nbsp;");
+		return code;
 	}
 }

@@ -18,6 +18,7 @@ public class InputHFlexCase extends FlexCase {
 		fixWidthAndHeight(content);
 		view = generateView("Input HFlex Case: { input: " + comp + " }");
 		view.appendChild(content);
-		codeView = generateCodeView(content);
+		setCode(content);
+		codeView = generateCodeView(content, rawHTMLCode);
 	}
 }

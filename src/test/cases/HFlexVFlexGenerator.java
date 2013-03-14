@@ -3,7 +3,6 @@ package test.cases;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 import org.zkoss.lang.Strings;
 import org.zkoss.zk.ui.Component;
@@ -303,13 +302,8 @@ public class HFlexVFlexGenerator {
 		}
 	}
 
-	public static Window generateCodeView(HtmlBasedComponent layout) {
-		String code = new test.util.XMLConverter(layout).toXML();
+	public static Window generateCodeView(HtmlBasedComponent layout, String code) {
 		Window codeView = generateView("Code View");
-		code = Pattern.compile("<").matcher(code).replaceAll("&lt;");
-		code = Pattern.compile(">").matcher(code).replaceAll("&gt;");
-		code = Pattern.compile("\\r?\\n").matcher(code).replaceAll("<br/>");
-		code = Pattern.compile("\\s").matcher(code).replaceAll("&nbsp;");
 		Html html = new Html();
 		html.setContent("<code>" + code + "</code>");
 		codeView.appendChild(html);
