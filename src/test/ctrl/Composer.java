@@ -8,6 +8,7 @@ import org.zkoss.zul.Combobox;
 import org.zkoss.zul.Window;
 
 import test.cases.FlexCase;
+import test.cases.InputHFlexCase;
 import test.cases.LayoutCase;
 import test.cases.MinFlexCase;
 import test.cases.VFlexCase;
@@ -61,6 +62,9 @@ public class Composer extends SelectorComposer {
 		} else if (testcaseVal.equalsIgnoreCase("MinFlexCase")) {
 			reset();
 			appendCase(new MinFlexCase(componentVal, layoutVal));
+		} else if (testcaseVal.equalsIgnoreCase("InputHFlexCase")) {
+			reset();
+			appendCase(new InputHFlexCase(componentVal));
 		}
 	}
 

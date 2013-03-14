@@ -1,10 +1,12 @@
 <window id="main" apply="test.ctrl.Composer">
 	<zscript><![CDATA[
 	ListModelList cases = new ListModelList(Arrays.asList(new String[] {
-			"VFlexCase", "LayoutCase", "MinFlexCase" }));
+			"VFlexCase", "LayoutCase", "MinFlexCase", "InputHFlexCase" }));
 	ListModelList comps = new ListModelList(Arrays.asList(new String[] { "Div",
 			"Panel", "Window", "Groupbox", "Tabbox", "Hlayout", "Hbox",
 			"Vlayout", "Vbox" }));
+	ListModelList inputs = new ListModelList(
+			Arrays.asList(new String[] { "bandbox" }));
 	ListModelList layouts = new ListModelList(Arrays.asList(new String[] {
 			"Hlayout", "Hbox", "Vlayout", "Vbox" }));
 ]]>
@@ -13,11 +15,22 @@
 	<combobox id="testcase" width="150px" model="${cases}"
 		readonly="true" onAfterRender="self.setSelectedIndex(0)">
 		<attribute name="onChange"><![CDATA[
-	if ("VFlexCase".equalsIgnoreCase(self.getSelectedItem().getValue()
-			.toString())) {
+	String seldVal = self.getSelectedItem().getValue().toString();
+	ListModelList model = component.getModel();
+	 if ("InputHFlexCase".equalsIgnoreCase(seldVal)) {
 		layout.setDisabled(true);
+		if(!inputs.equals(model)){
+			component.setModel(inputs);
+			component.setValue(inputs.get(0).toString());
+		}
 	} else {
-		if (layout.isDisabled()) {
+		if(!comps.equals(model)){
+			component.setModel(comps);
+			component.setValue(layouts.get(0).toString());
+		}
+		if ("VFlexCase".equalsIgnoreCase(seldVal)) {
+			layout.setDisabled(true);
+		} else if (layout.isDisabled()) {
 			layout.setDisabled(false);
 			layout.setValue(layouts.get(0).toString());
 		}

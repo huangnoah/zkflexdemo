@@ -6,12 +6,19 @@ import java.util.regex.Pattern;
 import org.zkoss.lang.Strings;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.HtmlBasedComponent;
+import org.zkoss.zul.Bandbox;
+import org.zkoss.zul.Bandpopup;
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Groupbox;
 import org.zkoss.zul.Hbox;
 import org.zkoss.zul.Hlayout;
 import org.zkoss.zul.Html;
 import org.zkoss.zul.Label;
+import org.zkoss.zul.Listbox;
+import org.zkoss.zul.Listcell;
+import org.zkoss.zul.Listhead;
+import org.zkoss.zul.Listheader;
+import org.zkoss.zul.Listitem;
 import org.zkoss.zul.Panel;
 import org.zkoss.zul.Panelchildren;
 import org.zkoss.zul.Tab;
@@ -34,9 +41,12 @@ public class HFlexVFlexGenerator {
 	public static final String window = "Window";
 	public static final String groupbox = "Groupbox";
 	public static final String tabbox = "Tabbox";
+	public static final String bandbox = "bandbox";
 
 	private static HtmlBasedComponent generateElement(String comp,
 			String style, boolean isDiv) throws Exception {
+		
+		// container
 		if (panel.equalsIgnoreCase(comp)) {
 			Panel p = new Panel();
 			Panelchildren pc = new Panelchildren();
@@ -63,6 +73,26 @@ public class HFlexVFlexGenerator {
 			tabbox.appendChild(tabs);
 			tabbox.appendChild(tabpanels);
 			return tabbox;
+			
+			// input
+		} else if(bandbox.equalsIgnoreCase(comp)) {
+			Bandbox bandbox = new Bandbox();
+			Bandpopup bandpopup = new Bandpopup();
+			Vbox vbox = new Vbox();
+			Listbox listbox = new Listbox();
+			Listhead listhead = new Listhead();
+			Listheader listheader = new Listheader("Name");
+			listhead.appendChild(listheader);
+			listbox.appendChild(listhead);
+			Listitem listitem = new Listitem();
+			Listcell listcell = new Listcell("John");
+			listitem.appendChild(listcell);
+			listbox.appendChild(listitem);
+			vbox.appendChild(listbox);
+			bandpopup.appendChild(vbox);
+			bandbox.appendChild(bandpopup);
+			return bandbox;
+			// layout
 		} else if (vlayout.equalsIgnoreCase(comp)) {
 			HtmlBasedComponent layout = generateLayout(vlayout);
 			if (!(layout instanceof Vlayout)) {
