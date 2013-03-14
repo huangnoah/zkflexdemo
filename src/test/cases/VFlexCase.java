@@ -7,10 +7,9 @@ import org.zkoss.zk.ui.HtmlBasedComponent;
 import static test.cases.HFlexVFlexGenerator.*;
 
 public class VFlexCase extends FlexCase {
-	private Map<String, String> attrs;
 	
 	public VFlexCase(String comp) throws Exception {
-		attrs = new HashMap<String, String>();
+		Map<String, String> attrs = new HashMap<String, String>();
 		attrs.put("vflex", "1");
 		attrs.put("style", "background:yellow");
 		HtmlBasedComponent content = generateContent(comp, attrs, true);
