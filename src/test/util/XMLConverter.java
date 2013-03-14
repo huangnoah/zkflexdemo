@@ -8,13 +8,15 @@ import nu.xom.Element;
 
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.HtmlBasedComponent;
+import org.zkoss.zul.Doublespinner;
 import org.zkoss.zul.Label;
+import org.zkoss.zul.Spinner;
 import org.zkoss.zul.impl.LabelElement;
 
 public class XMLConverter {
-	
+
 	private HtmlBasedComponent comp;
-	
+
 	public XMLConverter(HtmlBasedComponent comp) {
 		super();
 		this.comp = comp;
@@ -30,13 +32,17 @@ public class XMLConverter {
 			setAttrIfExists(elem, "value", ((Label) comp).getValue());
 		} else if (comp instanceof LabelElement) {
 			setAttrIfExists(elem, "label", ((LabelElement) comp).getLabel());
+		} else if (comp instanceof Doublespinner) {
+			setAttrIfExists(elem, "value", ((Doublespinner) comp).getValue());
+		} else if (comp instanceof Spinner) {
+			setAttrIfExists(elem, "value", ((Spinner) comp).getValue());
 		}
 	}
 
 	private static void setAttrIfExists(Element elem, String attrName,
-			String val) {
+			Object val) {
 		if (val != null) {
-			Attribute attr = new Attribute(attrName, val);
+			Attribute attr = new Attribute(attrName, val.toString());
 			elem.addAttribute(attr);
 		}
 	}
@@ -57,8 +63,7 @@ public class XMLConverter {
 				// if it checked, then skip
 				continue;
 			} else if (child.getChildren().size() > 0) {
-				self.appendChild(unapply(((HtmlBasedComponent) child),
-						checked));
+				self.appendChild(unapply(((HtmlBasedComponent) child), checked));
 			} else {
 				setAttrs(childElem, (HtmlBasedComponent) child);
 				self.appendChild(childElem);
@@ -73,7 +78,7 @@ public class XMLConverter {
 
 		return self;
 	}
-	
+
 	public String toXML() {
 		Element root = unapply();
 		return new XMLFormatter(root.toXML()).getXML();

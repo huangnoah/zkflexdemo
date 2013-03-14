@@ -8,7 +8,7 @@
 	ListModelList inputs = new ListModelList(Arrays.asList(new String[] {
 			"Bandbox", "Calendar", "Chosenbox", "Colorbox", "Combobox",
 			"Datebox", "Decimalbox", "Doublebox", "Intbox", "LongBox",
-			"Textbox", "Timebox" }));
+			"Textbox", "Timebox", "Doublesnipper", "Snipper", "Slider" }));
 	ListModelList layouts = new ListModelList(Arrays.asList(new String[] {
 			"Hlayout", "Hbox", "Vlayout", "Vbox" }));
 ]]>

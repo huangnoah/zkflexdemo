@@ -19,6 +19,7 @@ import org.zkoss.zul.Datebox;
 import org.zkoss.zul.Decimalbox;
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Doublebox;
+import org.zkoss.zul.Doublespinner;
 import org.zkoss.zul.Groupbox;
 import org.zkoss.zul.Hbox;
 import org.zkoss.zul.Hlayout;
@@ -34,6 +35,8 @@ import org.zkoss.zul.Listitem;
 import org.zkoss.zul.Longbox;
 import org.zkoss.zul.Panel;
 import org.zkoss.zul.Panelchildren;
+import org.zkoss.zul.Slider;
+import org.zkoss.zul.Spinner;
 import org.zkoss.zul.Tab;
 import org.zkoss.zul.Tabbox;
 import org.zkoss.zul.Tabpanel;
@@ -68,6 +71,9 @@ public class HFlexVFlexGenerator {
 	public static final String longbox = "Longbox";
 	public static final String textbox = "Textbox";
 	public static final String timebox = "Timebox";
+	public static final String doublespinner = "Doublespinner";
+	public static final String spinner = "Spinner";
+	public static final String slider = "Slider";
 
 	private static HtmlBasedComponent generateElement(String comp,
 			String style, boolean isDiv) throws Exception {
@@ -101,6 +107,12 @@ public class HFlexVFlexGenerator {
 			return tabbox;
 
 			// input
+		} else if (doublespinner.equalsIgnoreCase(comp)) {
+			return new Doublespinner(0.5);
+		} else if (spinner.equalsIgnoreCase(comp)) {
+			return new Spinner(2);
+		} else if (slider.equalsIgnoreCase(comp)) {
+			return new Slider();
 		} else if (decimalbox.equalsIgnoreCase(comp)) {
 			return new Decimalbox(new BigDecimal(1111111111111L));
 		} else if (doublebox.equalsIgnoreCase(comp)) {
