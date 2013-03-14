@@ -4,7 +4,9 @@
 			"VFlexCase", "LayoutCase", "MinFlexCase", "InputHFlexCase" }));
 	ListModelList comps = new ListModelList(Arrays.asList(new String[] { "Div",
 			"Panel", "Window", "Groupbox", "Tabbox", "Hlayout", "Hbox",
-			"Vlayout", "Vbox" }));
+			"Vlayout", "Vbox", "Bandbox", "Calendar", "Chosenbox", "Colorbox", "Combobox",
+			"Datebox", "Decimalbox", "Doublebox", "Intbox", "Longbox",
+			"Textbox", "Timebox", "Doublespinner", "Spinner", "Slider" }));
 	ListModelList inputs = new ListModelList(Arrays.asList(new String[] {
 			"Bandbox", "Calendar", "Chosenbox", "Colorbox", "Combobox",
 			"Datebox", "Decimalbox", "Doublebox", "Intbox", "Longbox",
