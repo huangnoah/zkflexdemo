@@ -146,6 +146,7 @@ public class HFlexVFlexGenerator {
 			Bandpopup bandpopup = new Bandpopup();
 			Vbox vbox = new Vbox();
 			Listbox listbox = new Listbox();
+			listbox.setWidth("200px");
 			Listhead listhead = new Listhead();
 			Listheader listheader = new Listheader("Name");
 			listhead.appendChild(listheader);
