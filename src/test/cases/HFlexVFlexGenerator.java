@@ -8,6 +8,7 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.HtmlBasedComponent;
 import org.zkoss.zul.Bandbox;
 import org.zkoss.zul.Bandpopup;
+import org.zkoss.zul.Calendar;
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Groupbox;
 import org.zkoss.zul.Hbox;
@@ -41,7 +42,8 @@ public class HFlexVFlexGenerator {
 	public static final String window = "Window";
 	public static final String groupbox = "Groupbox";
 	public static final String tabbox = "Tabbox";
-	public static final String bandbox = "bandbox";
+	public static final String bandbox = "Bandbox";
+	public static final String calendar = "Calendar";
 
 	private static HtmlBasedComponent generateElement(String comp,
 			String style, boolean isDiv) throws Exception {
@@ -75,6 +77,8 @@ public class HFlexVFlexGenerator {
 			return tabbox;
 			
 			// input
+		} else if (calendar.equalsIgnoreCase(comp)){
+			return new Calendar();
 		} else if(bandbox.equalsIgnoreCase(comp)) {
 			Bandbox bandbox = new Bandbox();
 			Bandpopup bandpopup = new Bandpopup();
