@@ -14,6 +14,7 @@ import org.zkoss.zul.Bandpopup;
 import org.zkoss.zul.Calendar;
 import org.zkoss.zul.Combobox;
 import org.zkoss.zul.Comboitem;
+import org.zkoss.zul.Datebox;
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Groupbox;
 import org.zkoss.zul.Hbox;
@@ -53,6 +54,7 @@ public class HFlexVFlexGenerator {
 	public static final String chosenbox = "Chosenbox";
 	public static final String colorbox = "Colorbox";
 	public static final String combobox = "Combobox";
+	public static final String datebox = "Datebox";
 
 	private static HtmlBasedComponent generateElement(String comp,
 			String style, boolean isDiv) throws Exception {
@@ -86,6 +88,8 @@ public class HFlexVFlexGenerator {
 			return tabbox;
 
 			// input
+		} else if(datebox.equalsIgnoreCase(comp)) {
+			return new Datebox();
 		} else if (combobox.equalsIgnoreCase(comp)) {
 			Combobox combobox = new Combobox();
 			Comboitem apple = new Comboitem("apple");
