@@ -13,15 +13,17 @@ import org.zkoss.zk.ui.HtmlBasedComponent;
 
 public class MinFlexCase extends FlexCase {
 
-	public MinFlexCase(String comp, String testcase) throws Exception {
-		this(comp, testcase, testcase.startsWith("V") ? "hflex" : "vflex");
+	public MinFlexCase(String comp, String testcase, boolean rounded)
+			throws Exception {
+		this(comp, testcase, testcase.startsWith("V") ? "hflex" : "vflex",
+				rounded);
 	}
 
-	private MinFlexCase(String comp, String layoutName, String flex)
-			throws Exception {
+	private MinFlexCase(String comp, String layoutName, String flex,
+			boolean rounded) throws Exception {
 		HtmlBasedComponent layout = generateLayout(layoutName, null, null);
-		applyProperties(layout, comp, flex);
-		
+		applyProperties(layout, comp, flex, rounded);
+
 		view = generateView("minimum Flex: { componenet: " + comp
 				+ ", layout: " + layoutName + " }");
 		fixWidthAndHeight(layout);
@@ -30,7 +32,7 @@ public class MinFlexCase extends FlexCase {
 	}
 
 	private static HtmlBasedComponent applyProperties(
-			HtmlBasedComponent layout, String comp, String flex)
+			HtmlBasedComponent layout, String comp, String flex, boolean rounded)
 			throws Exception {
 		// build attrs
 		Map<String, String> attrs1 = new HashMap<String, String>();
@@ -61,9 +63,9 @@ public class MinFlexCase extends FlexCase {
 		attrs3.put("style", "background:red");
 
 		// append
-		layout.appendChild(generateContent(comp, attrs1, false));
-		layout.appendChild(generateContent(comp, attrs2, false));
-		layout.appendChild(generateContent(comp, attrs3, false));
+		layout.appendChild(generateContent(comp, rounded, attrs1, false));
+		layout.appendChild(generateContent(comp, rounded, attrs2, false));
+		layout.appendChild(generateContent(comp, rounded, attrs3, false));
 		return layout;
 	}
 

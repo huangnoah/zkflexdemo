@@ -11,27 +11,28 @@ import java.util.Map;
 
 import org.zkoss.zk.ui.HtmlBasedComponent;
 
-
 public class LayoutCase extends FlexCase {
 
-	public LayoutCase(String comp, String testcase) throws Exception {
-		this(comp, testcase, testcase.startsWith("V") ? "vflex" : "hflex");
+	public LayoutCase(String comp, String testcase, boolean rounded)
+			throws Exception {
+		this(comp, testcase, testcase.startsWith("V") ? "vflex" : "hflex",
+				rounded);
 	}
 
-	private LayoutCase(String comp, String layoutName, String flex)
-			throws Exception {
+	private LayoutCase(String comp, String layoutName, String flex,
+			boolean rounded) throws Exception {
 		HtmlBasedComponent layout = generateLayout(layoutName);
-		applyProperties(layout, comp, flex);
+		applyProperties(layout, comp, flex, rounded);
 		fixWidthAndHeight(layout);
-		
+
 		view = generateView("Proportional Flexibility: { component: " + comp
 				+ "}");
 		view.appendChild(layout);
 		codeView = generateCodeView(layout);
 	}
 
-	public static void applyProperties(HtmlBasedComponent layout,
-			String comp, String flex) throws Exception {
+	public static void applyProperties(HtmlBasedComponent layout, String comp,
+			String flex, boolean rounded) throws Exception {
 		Map<String, String> attrs1 = new HashMap<String, String>();
 		Map<String, String> attrs2 = new HashMap<String, String>();
 		if ("hflex".equalsIgnoreCase(flex)) {
@@ -46,8 +47,8 @@ public class LayoutCase extends FlexCase {
 
 		attrs1.put("style", "background:cyan");
 		attrs2.put("style", "background:yellow");
-		layout.appendChild(generateContent(comp, attrs1, false));
-		layout.appendChild(generateContent(comp, attrs2, false));
+		layout.appendChild(generateContent(comp, rounded, attrs1, false));
+		layout.appendChild(generateContent(comp, rounded, attrs2, false));
 	}
 
 }

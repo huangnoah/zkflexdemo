@@ -4,9 +4,10 @@
 			"VFlexCase", "LayoutCase", "MinFlexCase", "InputHFlexCase" }));
 	ListModelList comps = new ListModelList(Arrays.asList(new String[] { "Div",
 			"Panel", "Window", "Groupbox", "Tabbox", "Hlayout", "Hbox",
-			"Vlayout", "Vbox", "Bandbox", "Calendar", "Chosenbox", "Colorbox", "Combobox",
-			"Datebox", "Decimalbox", "Doublebox", "Intbox", "Longbox",
-			"Textbox", "Timebox", "Doublespinner", "Spinner", "Slider" }));
+			"Vlayout", "Vbox", "Bandbox", "Calendar", "Chosenbox", "Colorbox",
+			"Combobox", "Datebox", "Decimalbox", "Doublebox", "Intbox",
+			"Longbox", "Textbox", "Timebox", "Doublespinner", "Spinner",
+			"Slider" }));
 	ListModelList inputs = new ListModelList(Arrays.asList(new String[] {
 			"Bandbox", "Calendar", "Chosenbox", "Colorbox", "Combobox",
 			"Datebox", "Decimalbox", "Doublebox", "Intbox", "Longbox",
@@ -44,10 +45,22 @@
 	<label value="component" />
 	<combobox id="component" width="150px" model="${comps}"
 		readonly="true" onAfterRender="self.setSelectedIndex(0)">
+		<attribute name="onChange"><![CDATA[
+	String seldVal = self.getSelectedItem().getValue().toString();
+	if (inputs.getInnerList().contains(seldVal)) {
+		if (round.isDisabled())
+			round.setDisabled(false);
+	} else {
+		round.setDisabled(true);
+	}
+]]></attribute>
 	</combobox>
 	<label value="layout" />
 	<combobox id="layout" width="150px" model="${layouts}"
 		onAfterRender="self.setSelectedIndex(0)" readonly="true"
 		disabled="true">
 	</combobox>
+	<checkbox id="round" label="Rounded" checked="false"
+		disabled="true">
+	</checkbox>
 </window>

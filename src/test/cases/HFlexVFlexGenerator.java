@@ -47,6 +47,7 @@ import org.zkoss.zul.Timebox;
 import org.zkoss.zul.Vbox;
 import org.zkoss.zul.Vlayout;
 import org.zkoss.zul.Window;
+import org.zkoss.zul.impl.InputElement;
 
 public class HFlexVFlexGenerator {
 
@@ -138,6 +139,7 @@ public class HFlexVFlexGenerator {
 			return new Calendar();
 		} else if (chosenbox.equalsIgnoreCase(comp)) {
 			Chosenbox chosenbox = new Chosenbox();
+			chosenbox.setModel(generateListModel());
 			return chosenbox;
 		} else if (colorbox.equalsIgnoreCase(comp)) {
 			return new Colorbox();
@@ -165,7 +167,7 @@ public class HFlexVFlexGenerator {
 			if (!(layout instanceof Vlayout)) {
 				throw new Exception(layout + "can't cast to valyout");
 			} else {
-				LayoutCase.applyProperties(layout, div, "vflex");
+				LayoutCase.applyProperties(layout, div, "vflex", false);
 			}
 			return layout;
 		} else if (vbox.equalsIgnoreCase(comp)) {
@@ -173,7 +175,7 @@ public class HFlexVFlexGenerator {
 			if (!(layout instanceof Vbox)) {
 				throw new Exception(layout + "can't cast to vbox");
 			} else {
-				LayoutCase.applyProperties(layout, div, "vflex");
+				LayoutCase.applyProperties(layout, div, "vflex", false);
 			}
 			return layout;
 		} else if (hlayout.equalsIgnoreCase(comp)) {
@@ -181,7 +183,7 @@ public class HFlexVFlexGenerator {
 			if (!(layout instanceof Hlayout)) {
 				throw new Exception(layout + "can't cast to hlayout");
 			} else {
-				LayoutCase.applyProperties(layout, div, "hflex");
+				LayoutCase.applyProperties(layout, div, "hflex", false);
 			}
 			return layout;
 		} else if (hbox.equalsIgnoreCase(comp)) {
@@ -189,7 +191,7 @@ public class HFlexVFlexGenerator {
 			if (!(layout instanceof Hbox)) {
 				throw new Exception(layout + "can't cast to hbox");
 			} else {
-				LayoutCase.applyProperties(layout, div, "hflex");
+				LayoutCase.applyProperties(layout, div, "hflex", false);
 			}
 			return layout;
 
@@ -234,7 +236,7 @@ public class HFlexVFlexGenerator {
 				"banana" }));
 	}
 
-	public static HtmlBasedComponent generateContent(String comp,
+	public static HtmlBasedComponent generateContent(String comp, boolean rounded,
 			Map<String, String> flex, boolean div) throws Exception {
 
 		String hflexVal = flex.get("hflex");
@@ -254,6 +256,9 @@ public class HFlexVFlexGenerator {
 		}
 		if (heightVal != null) {
 			element.setHeight(heightVal);
+		}
+		if(rounded && element instanceof InputElement){
+			((InputElement) element).setMold("rounded");
 		}
 
 		return element;

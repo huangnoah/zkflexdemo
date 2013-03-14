@@ -11,13 +11,12 @@ import java.util.Map;
 import org.zkoss.zk.ui.HtmlBasedComponent;
 
 public class InputHFlexCase extends FlexCase {
-	public InputHFlexCase(String comp) throws Exception {
+	public InputHFlexCase(String comp, boolean rounded) throws Exception {
 		Map<String, String> attrs = new HashMap<String, String>();
 		attrs.put("hflex", "1");
-		HtmlBasedComponent content = generateContent(comp, attrs, true);
+		HtmlBasedComponent content = generateContent(comp, rounded, attrs, true);
 		fixWidthAndHeight(content);
-		view = generateView("Input HFlex Case: { input: "
-				+ comp + " }");
+		view = generateView("Input HFlex Case: { input: " + comp + " }");
 		view.appendChild(content);
 		codeView = generateCodeView(content);
 	}
