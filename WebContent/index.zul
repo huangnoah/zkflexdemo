@@ -7,8 +7,8 @@
 			"Vlayout", "Vbox" }));
 	ListModelList inputs = new ListModelList(Arrays.asList(new String[] {
 			"Bandbox", "Calendar", "Chosenbox", "Colorbox", "Combobox",
-			"Datebox", "Decimalbox", "Doublebox", "Intbox", "LongBox",
-			"Textbox", "Timebox", "Doublesnipper", "Snipper", "Slider" }));
+			"Datebox", "Decimalbox", "Doublebox", "Intbox", "Longbox",
+			"Textbox", "Timebox", "Doublespinner", "Spinner", "Slider" }));
 	ListModelList layouts = new ListModelList(Arrays.asList(new String[] {
 			"Hlayout", "Hbox", "Vlayout", "Vbox" }));
 ]]>

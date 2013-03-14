@@ -8,9 +8,14 @@ import nu.xom.Element;
 
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.HtmlBasedComponent;
+import org.zkoss.zul.Decimalbox;
+import org.zkoss.zul.Doublebox;
 import org.zkoss.zul.Doublespinner;
+import org.zkoss.zul.Intbox;
 import org.zkoss.zul.Label;
+import org.zkoss.zul.Longbox;
 import org.zkoss.zul.Spinner;
+import org.zkoss.zul.Textbox;
 import org.zkoss.zul.impl.LabelElement;
 
 public class XMLConverter {
@@ -36,7 +41,17 @@ public class XMLConverter {
 			setAttrIfExists(elem, "value", ((Doublespinner) comp).getValue());
 		} else if (comp instanceof Spinner) {
 			setAttrIfExists(elem, "value", ((Spinner) comp).getValue());
-		}
+		} else if (comp instanceof Decimalbox) {
+			setAttrIfExists(elem, "value", ((Decimalbox) comp).getValue());
+		} else if (comp instanceof Doublebox) {
+			setAttrIfExists(elem, "value", ((Doublebox) comp).getValue());
+		} else if (comp instanceof Intbox) {
+			setAttrIfExists(elem, "value", ((Intbox) comp).getValue());
+		} else if (comp instanceof Longbox) {
+			setAttrIfExists(elem, "value", ((Longbox) comp).getValue());
+		} else if (comp instanceof Textbox) {
+			setAttrIfExists(elem, "value", ((Textbox) comp).getValue());
+		} 
 	}
 
 	private static void setAttrIfExists(Element elem, String attrName,
