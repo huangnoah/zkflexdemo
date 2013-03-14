@@ -1,11 +1,13 @@
 package test.cases;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.regex.Pattern;
 
 import org.zkoss.lang.Strings;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.HtmlBasedComponent;
+import org.zkoss.zkmax.zul.Chosenbox;
 import org.zkoss.zul.Bandbox;
 import org.zkoss.zul.Bandpopup;
 import org.zkoss.zul.Calendar;
@@ -15,6 +17,7 @@ import org.zkoss.zul.Hbox;
 import org.zkoss.zul.Hlayout;
 import org.zkoss.zul.Html;
 import org.zkoss.zul.Label;
+import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Listhead;
@@ -44,10 +47,11 @@ public class HFlexVFlexGenerator {
 	public static final String tabbox = "Tabbox";
 	public static final String bandbox = "Bandbox";
 	public static final String calendar = "Calendar";
+	public static final String chosenbox = "Chosenbox";
 
 	private static HtmlBasedComponent generateElement(String comp,
 			String style, boolean isDiv) throws Exception {
-		
+
 		// container
 		if (panel.equalsIgnoreCase(comp)) {
 			Panel p = new Panel();
@@ -75,11 +79,16 @@ public class HFlexVFlexGenerator {
 			tabbox.appendChild(tabs);
 			tabbox.appendChild(tabpanels);
 			return tabbox;
-			
+
 			// input
-		} else if (calendar.equalsIgnoreCase(comp)){
+		} else if (calendar.equalsIgnoreCase(comp)) {
 			return new Calendar();
-		} else if(bandbox.equalsIgnoreCase(comp)) {
+		} else if (chosenbox.equalsIgnoreCase(comp)) {
+			Chosenbox chosenbox = new Chosenbox();
+			chosenbox.setModel(new ListModelList(Arrays.asList(new String[] {
+					"apple", "banana" })));
+			return chosenbox;
+		} else if (bandbox.equalsIgnoreCase(comp)) {
 			Bandbox bandbox = new Bandbox();
 			Bandpopup bandpopup = new Bandpopup();
 			Vbox vbox = new Vbox();
@@ -241,8 +250,8 @@ public class HFlexVFlexGenerator {
 		return codeView;
 	}
 
-	static HtmlBasedComponent generateLayout(String layout,
-			String width, String height) {
+	static HtmlBasedComponent generateLayout(String layout, String width,
+			String height) {
 		HtmlBasedComponent component = null;
 		try {
 			Class<?> clazz = Class.forName("org.zkoss.zul." + layout);
