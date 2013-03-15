@@ -25,15 +25,15 @@ public class Main {
 		for (String comp : comps) {
 			outputCase(new VFlexCase(comp, false));
 
-			outputCase(new LayoutCase(comp, "Hlayout", false), new LayoutCase(
-					comp, "Hbox", false));
-			outputCase(new LayoutCase(comp, "Vlayout", false), new LayoutCase(
-					comp, "Vbox", false));
+			outputCase(new LayoutCase(comp, "Hlayout", false), 
+					   new LayoutCase(comp, "Hbox", false));
+			outputCase(new LayoutCase(comp, "Vlayout", false), 
+					   new LayoutCase(comp, "Vbox", false));
 
 			outputCase(new MinFlexCase(comp, "Hlayout", false),
-					new MinFlexCase(comp, "Hbox", false));
+					   new MinFlexCase(comp, "Hbox", false));
 			outputCase(new MinFlexCase(comp, "Vlayout", false),
-					new MinFlexCase(comp, "Vbox", false));
+					   new MinFlexCase(comp, "Vbox", false));
 		}
 
 		for (String inp : inps) {
