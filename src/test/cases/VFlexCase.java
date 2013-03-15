@@ -1,10 +1,12 @@
 package test.cases;
 
+import static test.cases.HFlexVFlexGenerator.generateContent;
+import static test.cases.HFlexVFlexGenerator.generateView;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.zkoss.zk.ui.HtmlBasedComponent;
-import static test.cases.HFlexVFlexGenerator.*;
 
 public class VFlexCase extends FlexCase {
 
@@ -13,12 +15,9 @@ public class VFlexCase extends FlexCase {
 		attrs.put("vflex", "1");
 		attrs.put("style", "background:yellow");
 		HtmlBasedComponent content = generateContent(comp, rounded, attrs, true);
-		fixWidthAndHeight(content);
-		view = generateView("Fit-the-Rest Flexibility: { component: " + comp
-				+ " }");
-		view.appendChild(content);
-		setCode(content);
-		codeView = generateCodeView(content, rawHTMLCode);
+		view = generateView("Fit-the-Rest Flexibility: [" + comp
+				+ (rounded ? ", rounded" : "") + "]");
+		init(content);
 	}
 
 }

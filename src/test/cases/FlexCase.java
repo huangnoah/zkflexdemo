@@ -1,16 +1,28 @@
 package test.cases;
 
+import static test.cases.HFlexVFlexGenerator.fixWidthAndHeight;
+import static test.cases.HFlexVFlexGenerator.generateCodeView;
+
 import org.zkoss.zk.ui.HtmlBasedComponent;
 import org.zkoss.zul.Window;
 
 import test.util.XMLConverter;
 
-public abstract class FlexCase {
+public class FlexCase {
 
 	protected Window view;
 	protected Window codeView;
-	protected String rawXML;
-	protected String rawHTMLCode;
+	protected String xml;
+	protected String rawHTML;
+
+	protected void init(HtmlBasedComponent comp) {
+		fixWidthAndHeight(comp);
+		view.appendChild(comp);
+		XMLConverter conv = new XMLConverter(comp);
+		xml = conv.toXML();
+		rawHTML = XMLConverter.toRawHTML(xml);
+		codeView = generateCodeView(comp, rawHTML);
+	}
 
 	public Window getView() {
 		return view;
@@ -20,18 +32,16 @@ public abstract class FlexCase {
 		return codeView;
 	}
 
-	public String getRawXML() {
-		return rawXML;
+	public String getXml() {
+		return xml;
 	}
 
-	public String getRawHTMLCode() {
-		return rawHTMLCode;
+	public String getRawHTML() {
+		return rawHTML;
 	}
 
-	protected void setCode(HtmlBasedComponent layout) {
-		XMLConverter conv = new XMLConverter(layout);
-		rawXML = conv.toXML();
-		rawHTMLCode = conv.toHTML(rawXML);
+	public String getViewXML() {
+		return new XMLConverter(view).toXML();
 	}
 
 }

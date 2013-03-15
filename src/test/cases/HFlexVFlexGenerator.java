@@ -229,8 +229,9 @@ public class HFlexVFlexGenerator {
 		}
 	}
 
-	public static HtmlBasedComponent generateContent(String comp, boolean rounded,
-			Map<String, String> flex, boolean div) throws Exception {
+	public static HtmlBasedComponent generateContent(String comp,
+			boolean rounded, Map<String, String> flex, boolean div)
+			throws Exception {
 
 		String hflexVal = flex.get("hflex");
 		String vflexVal = flex.get("vflex");
@@ -250,7 +251,7 @@ public class HFlexVFlexGenerator {
 		if (heightVal != null) {
 			element.setHeight(heightVal);
 		}
-		if(rounded && element instanceof InputElement){
+		if (rounded && element instanceof InputElement) {
 			((InputElement) element).setMold("rounded");
 		}
 
@@ -262,9 +263,13 @@ public class HFlexVFlexGenerator {
 	}
 
 	public static Window generateView(String title) {
+		return generateView(title, "400px", "300px");
+	}
+
+	private static Window generateView(String title, String width, String height) {
 		Window view = new Window(title, "normal", false);
-		view.setWidth("600px");
-		view.setHeight("450px");
+		view.setWidth(width);
+		view.setHeight(height);
 		return view;
 	}
 
@@ -297,7 +302,7 @@ public class HFlexVFlexGenerator {
 	}
 
 	public static Window generateCodeView(HtmlBasedComponent layout, String code) {
-		Window codeView = generateView("Code View");
+		Window codeView = generateView("Code View", "600px", "450px");
 		Html html = new Html();
 		html.setContent("<code>" + code + "</code>");
 		codeView.appendChild(html);

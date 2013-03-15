@@ -1,7 +1,5 @@
 package test.cases;
 
-import static test.cases.HFlexVFlexGenerator.fixWidthAndHeight;
-import static test.cases.HFlexVFlexGenerator.generateCodeView;
 import static test.cases.HFlexVFlexGenerator.generateContent;
 import static test.cases.HFlexVFlexGenerator.generateView;
 
@@ -15,10 +13,8 @@ public class InputHFlexCase extends FlexCase {
 		Map<String, String> attrs = new HashMap<String, String>();
 		attrs.put("hflex", "1");
 		HtmlBasedComponent content = generateContent(comp, rounded, attrs, true);
-		fixWidthAndHeight(content);
-		view = generateView("Input HFlex Case: { input: " + comp + " }");
-		view.appendChild(content);
-		setCode(content);
-		codeView = generateCodeView(content, rawHTMLCode);
+		view = generateView("Input HFlex Case: [" + comp
+				+ (rounded ? ", rounded" : "") + "]");
+		init(content);
 	}
 }

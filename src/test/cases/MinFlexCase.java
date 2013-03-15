@@ -1,10 +1,8 @@
 package test.cases;
 
-import static test.cases.HFlexVFlexGenerator.fixWidthAndHeight;
-import static test.cases.HFlexVFlexGenerator.generateCodeView;
+import static test.cases.HFlexVFlexGenerator.generateContent;
 import static test.cases.HFlexVFlexGenerator.generateLayout;
 import static test.cases.HFlexVFlexGenerator.generateView;
-import static test.cases.HFlexVFlexGenerator.generateContent;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,8 +13,7 @@ public class MinFlexCase extends FlexCase {
 
 	public MinFlexCase(String comp, String layout, boolean rounded)
 			throws Exception {
-		this(comp, layout, layout.startsWith("V") ? "hflex" : "vflex",
-				rounded);
+		this(comp, layout, layout.startsWith("V") ? "hflex" : "vflex", rounded);
 	}
 
 	private MinFlexCase(String comp, String layoutName, String flex,
@@ -24,12 +21,9 @@ public class MinFlexCase extends FlexCase {
 		HtmlBasedComponent layout = generateLayout(layoutName, null, null);
 		applyProperties(layout, comp, flex, rounded);
 
-		view = generateView("minimum Flex: { componenet: " + comp
-				+ ", layout: " + layoutName + " }");
-		fixWidthAndHeight(layout);
-		view.appendChild(layout);
-		setCode(layout);
-		codeView = generateCodeView(layout, rawHTMLCode);
+		view = generateView("minimum Flex: [" + comp + ", " + layoutName
+				+ (rounded ? ", rounded" : "") + "]");
+		init(layout);
 	}
 
 	private static HtmlBasedComponent applyProperties(

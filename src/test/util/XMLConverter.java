@@ -15,8 +15,10 @@ import org.zkoss.zul.Doublespinner;
 import org.zkoss.zul.Intbox;
 import org.zkoss.zul.Label;
 import org.zkoss.zul.Longbox;
+import org.zkoss.zul.Panelchildren;
 import org.zkoss.zul.Spinner;
 import org.zkoss.zul.Textbox;
+import org.zkoss.zul.Window;
 import org.zkoss.zul.impl.LabelElement;
 
 public class XMLConverter {
@@ -29,11 +31,14 @@ public class XMLConverter {
 	}
 
 	private static void setAttrs(Element elem, HtmlBasedComponent comp) {
-		setAttrIfExists(elem, "hflex", comp.getHflex());
-		setAttrIfExists(elem, "vflex", comp.getVflex());
+		if (!(comp instanceof Panelchildren)) {
+			setAttrIfExists(elem, "hflex", comp.getHflex());
+			setAttrIfExists(elem, "vflex", comp.getVflex());
+		}
 		setAttrIfExists(elem, "height", comp.getHeight());
 		setAttrIfExists(elem, "width", comp.getWidth());
 		setAttrIfExists(elem, "style", comp.getStyle());
+
 		if (comp instanceof Label) {
 			setAttrIfExists(elem, "value", ((Label) comp).getValue());
 		} else if (comp instanceof LabelElement) {
@@ -52,7 +57,10 @@ public class XMLConverter {
 			setAttrIfExists(elem, "value", ((Longbox) comp).getValue());
 		} else if (comp instanceof Textbox) {
 			setAttrIfExists(elem, "value", ((Textbox) comp).getValue());
-		} 
+		} else if (comp instanceof Window) {
+			setAttrIfExists(elem, "title", ((Window) comp).getTitle());
+			setAttrIfExists(elem, "border", ((Window) comp).getBorder());
+		}
 	}
 
 	private static void setAttrIfExists(Element elem, String attrName,
@@ -99,12 +107,16 @@ public class XMLConverter {
 		Element root = unapply();
 		return new XMLFormatter(root.toXML()).getXML();
 	}
-	
-	public String toHTML(String xml) {
+
+	public static String toRawHTML(String xml) {
 		String code = Pattern.compile("<").matcher(xml).replaceAll("&lt;");
 		code = Pattern.compile(">").matcher(code).replaceAll("&gt;");
 		code = Pattern.compile("\\r?\\n").matcher(code).replaceAll("<br/>");
 		code = Pattern.compile("\\s").matcher(code).replaceAll("&nbsp;");
 		return code;
+	}
+
+	public String toRawHTML() {
+		return toRawHTML(this.toXML());
 	}
 }

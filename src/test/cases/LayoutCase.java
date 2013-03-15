@@ -1,7 +1,5 @@
 package test.cases;
 
-import static test.cases.HFlexVFlexGenerator.fixWidthAndHeight;
-import static test.cases.HFlexVFlexGenerator.generateCodeView;
 import static test.cases.HFlexVFlexGenerator.generateContent;
 import static test.cases.HFlexVFlexGenerator.generateLayout;
 import static test.cases.HFlexVFlexGenerator.generateView;
@@ -15,21 +13,17 @@ public class LayoutCase extends FlexCase {
 
 	public LayoutCase(String comp, String layout, boolean rounded)
 			throws Exception {
-		this(comp, layout, layout.startsWith("V") ? "vflex" : "hflex",
-				rounded);
+		this(comp, layout, layout.startsWith("V") ? "vflex" : "hflex", rounded);
 	}
 
 	private LayoutCase(String comp, String layoutName, String flex,
 			boolean rounded) throws Exception {
 		HtmlBasedComponent layout = generateLayout(layoutName);
 		applyProperties(layout, comp, flex, rounded);
-		fixWidthAndHeight(layout);
 
-		view = generateView("Proportional Flexibility: { component: " + comp
-				+ "}");
-		view.appendChild(layout);
-		setCode(layout);
-		codeView = generateCodeView(layout, rawHTMLCode);
+		view = generateView("Proportional Flexibility: [" + comp + ", "
+				+ layoutName + (rounded ? ", rounded" : "") + "]");
+		init(layout);
 	}
 
 	public static void applyProperties(HtmlBasedComponent layout, String comp,
