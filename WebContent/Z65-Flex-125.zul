@@ -18,15 +18,15 @@
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Spinner, Hlayout, rounded]" width="480px">
         <hlayout height="200px" width="200px">
-            <spinner hflex="1" value="2"/>
-            <spinner hflex="2" value="2"/>
+            <spinner hflex="1" mold="rounded" value="2"/>
+            <spinner hflex="2" mold="rounded" value="2"/>
         </hlayout>
     </window>
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Spinner, Hbox, rounded]" width="480px">
         <hbox height="200px" width="200px">
-            <spinner hflex="1" value="2"/>
-            <spinner hflex="2" value="2"/>
+            <spinner hflex="1" mold="rounded" value="2"/>
+            <spinner hflex="2" mold="rounded" value="2"/>
         </hbox>
     </window>
 </hbox>

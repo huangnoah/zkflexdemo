@@ -1,24 +1,6 @@
 <zk><hbox>
     <window border="normal" height="360px"
-        title="minimum Flex: [Datebox, Hlayout]" width="480px">
-        <hlayout vflex="min" width="200px">
-            <datebox hflex="1" vflex="1"/>
-            <datebox height="60px" hflex="1"/>
-            <datebox height="100px" hflex="1"/>
-        </hlayout>
-    </window>
-    <window border="normal" height="360px"
-        title="minimum Flex: [Datebox, Hbox]" width="480px">
-        <hbox vflex="min" width="200px">
-            <datebox hflex="1" vflex="1"/>
-            <datebox height="60px" hflex="1"/>
-            <datebox height="100px" hflex="1"/>
-        </hbox>
-    </window>
-</hbox>
-<hbox>
-    <window border="normal" height="360px"
-        title="minimum Flex: [Datebox, Vlayout, rounded]" width="480px">
+        title="minimum Flex: [Datebox, Vlayout]" width="480px">
         <vlayout height="200px" hflex="min">
             <datebox hflex="1" vflex="1"/>
             <datebox vflex="1" width="75px"/>
@@ -26,11 +8,29 @@
         </vlayout>
     </window>
     <window border="normal" height="360px"
-        title="minimum Flex: [Datebox, Vbox, rounded]" width="480px">
+        title="minimum Flex: [Datebox, Vbox]" width="480px">
         <vbox height="200px" hflex="min">
             <datebox hflex="1" vflex="1"/>
             <datebox vflex="1" width="75px"/>
             <datebox vflex="1" width="120px"/>
+        </vbox>
+    </window>
+</hbox>
+<hbox>
+    <window border="normal" height="360px"
+        title="minimum Flex: [Datebox, Vlayout, rounded]" width="480px">
+        <vlayout height="200px" hflex="min">
+            <datebox hflex="1" mold="rounded" vflex="1"/>
+            <datebox mold="rounded" vflex="1" width="75px"/>
+            <datebox mold="rounded" vflex="1" width="120px"/>
+        </vlayout>
+    </window>
+    <window border="normal" height="360px"
+        title="minimum Flex: [Datebox, Vbox, rounded]" width="480px">
+        <vbox height="200px" hflex="min">
+            <datebox hflex="1" mold="rounded" vflex="1"/>
+            <datebox mold="rounded" vflex="1" width="75px"/>
+            <datebox mold="rounded" vflex="1" width="120px"/>
         </vbox>
     </window>
 </hbox>

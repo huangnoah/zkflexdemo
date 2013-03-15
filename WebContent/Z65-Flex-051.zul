@@ -1,7 +1,7 @@
 <zk><hbox>
     <window border="normal" height="360px"
         title="Input HFlex Case: [Bandbox]" width="480px">
-        <bandbox hflex="1" value="">
+        <bandbox hflex="1">
             <bandpopup>
                 <vbox>
                     <listbox width="200px">
@@ -18,7 +18,7 @@
     </window>
     <window border="normal" height="360px"
         title="Input HFlex Case: [Bandbox, rounded]" width="480px">
-        <bandbox hflex="1" value="">
+        <bandbox hflex="1" mold="rounded">
             <bandpopup>
                 <vbox>
                     <listbox width="200px">

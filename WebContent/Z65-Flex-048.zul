@@ -2,7 +2,7 @@
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Bandbox, Vlayout]" width="480px">
         <vlayout height="200px" width="200px">
-            <bandbox hflex="1" value="" vflex="1">
+            <bandbox hflex="1" vflex="1">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -16,7 +16,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-            <bandbox hflex="1" value="" vflex="2">
+            <bandbox hflex="1" vflex="2">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -35,7 +35,7 @@
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Bandbox, Vbox]" width="480px">
         <vbox height="200px" width="200px">
-            <bandbox hflex="1" value="" vflex="1">
+            <bandbox hflex="1" vflex="1">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -49,7 +49,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-            <bandbox hflex="1" value="" vflex="2">
+            <bandbox hflex="1" vflex="2">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -70,7 +70,7 @@
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Bandbox, Vlayout, rounded]" width="480px">
         <vlayout height="200px" width="200px">
-            <bandbox hflex="1" value="" vflex="1">
+            <bandbox hflex="1" mold="rounded" vflex="1">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -84,7 +84,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-            <bandbox hflex="1" value="" vflex="2">
+            <bandbox hflex="1" mold="rounded" vflex="2">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -103,7 +103,7 @@
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Bandbox, Vbox, rounded]" width="480px">
         <vbox height="200px" width="200px">
-            <bandbox hflex="1" value="" vflex="1">
+            <bandbox hflex="1" mold="rounded" vflex="1">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -117,7 +117,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-            <bandbox hflex="1" value="" vflex="2">
+            <bandbox hflex="1" mold="rounded" vflex="2">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">

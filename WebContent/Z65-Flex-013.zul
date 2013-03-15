@@ -2,12 +2,12 @@
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Window, Vlayout]" width="480px">
         <vlayout height="200px" width="200px">
-            <window border="none" hflex="1" title="" vflex="1">
+            <window border="none" hflex="1" vflex="1">
                 <div height="100%" style="background:cyan" width="100%">
                     <label value="1"/>
                 </div>
             </window>
-            <window border="none" hflex="1" title="" vflex="2">
+            <window border="none" hflex="1" vflex="2">
                 <div height="100%" style="background:yellow" width="100%">
                     <label value="1"/>
                 </div>
@@ -17,12 +17,12 @@
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Window, Vbox]" width="480px">
         <vbox height="200px" width="200px">
-            <window border="none" hflex="1" title="" vflex="1">
+            <window border="none" hflex="1" vflex="1">
                 <div height="100%" style="background:cyan" width="100%">
                     <label value="1"/>
                 </div>
             </window>
-            <window border="none" hflex="1" title="" vflex="2">
+            <window border="none" hflex="1" vflex="2">
                 <div height="100%" style="background:yellow" width="100%">
                     <label value="1"/>
                 </div>

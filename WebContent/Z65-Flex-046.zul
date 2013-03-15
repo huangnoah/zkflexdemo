@@ -1,7 +1,7 @@
 <zk><hbox>
     <window border="normal" height="360px"
         title="Fit-the-Rest Flexibility: [Bandbox, rounded]" width="480px">
-        <bandbox value="" vflex="1">
+        <bandbox mold="rounded" vflex="1">
             <bandpopup>
                 <vbox>
                     <listbox width="200px">
@@ -18,7 +18,7 @@
     </window>
     <window border="normal" height="360px"
         title="Fit-the-Rest Flexibility: [Bandbox]" width="480px">
-        <bandbox value="" vflex="1">
+        <bandbox vflex="1">
             <bandpopup>
                 <vbox>
                     <listbox width="200px">

@@ -18,15 +18,15 @@
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Doublespinner, Vlayout, rounded]" width="480px">
         <vlayout height="200px" width="200px">
-            <doublespinner hflex="1" value="0.5" vflex="1"/>
-            <doublespinner hflex="1" value="0.5" vflex="2"/>
+            <doublespinner hflex="1" mold="rounded" value="0.5" vflex="1"/>
+            <doublespinner hflex="1" mold="rounded" value="0.5" vflex="2"/>
         </vlayout>
     </window>
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Doublespinner, Vbox, rounded]" width="480px">
         <vbox height="200px" width="200px">
-            <doublespinner hflex="1" value="0.5" vflex="1"/>
-            <doublespinner hflex="1" value="0.5" vflex="2"/>
+            <doublespinner hflex="1" mold="rounded" value="0.5" vflex="1"/>
+            <doublespinner hflex="1" mold="rounded" value="0.5" vflex="2"/>
         </vbox>
     </window>
 </hbox>

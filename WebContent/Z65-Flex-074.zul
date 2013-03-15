@@ -1,52 +1,52 @@
 <zk><hbox>
     <window border="normal" height="360px"
-        title="minimum Flex: [Combobox, Hlayout]" width="480px">
-        <hlayout vflex="min" width="200px">
-            <combobox hflex="1" value="" vflex="1">
+        title="minimum Flex: [Combobox, Vlayout]" width="480px">
+        <vlayout height="200px" hflex="min">
+            <combobox hflex="1" vflex="1">
                 <comboitem label="apple"/>
                 <comboitem label="banana"/>
             </combobox>
-            <combobox height="60px" hflex="1" value="">
+            <combobox vflex="1" width="75px">
                 <comboitem label="apple"/>
                 <comboitem label="banana"/>
             </combobox>
-            <combobox height="100px" hflex="1" value="">
+            <combobox vflex="1" width="120px">
                 <comboitem label="apple"/>
                 <comboitem label="banana"/>
             </combobox>
-        </hlayout>
+        </vlayout>
     </window>
     <window border="normal" height="360px"
-        title="minimum Flex: [Combobox, Hbox]" width="480px">
-        <hbox vflex="min" width="200px">
-            <combobox hflex="1" value="" vflex="1">
+        title="minimum Flex: [Combobox, Vbox]" width="480px">
+        <vbox height="200px" hflex="min">
+            <combobox hflex="1" vflex="1">
                 <comboitem label="apple"/>
                 <comboitem label="banana"/>
             </combobox>
-            <combobox height="60px" hflex="1" value="">
+            <combobox vflex="1" width="75px">
                 <comboitem label="apple"/>
                 <comboitem label="banana"/>
             </combobox>
-            <combobox height="100px" hflex="1" value="">
+            <combobox vflex="1" width="120px">
                 <comboitem label="apple"/>
                 <comboitem label="banana"/>
             </combobox>
-        </hbox>
+        </vbox>
     </window>
 </hbox>
 <hbox>
     <window border="normal" height="360px"
         title="minimum Flex: [Combobox, Vlayout, rounded]" width="480px">
         <vlayout height="200px" hflex="min">
-            <combobox hflex="1" value="" vflex="1">
+            <combobox hflex="1" mold="rounded" vflex="1">
                 <comboitem label="apple"/>
                 <comboitem label="banana"/>
             </combobox>
-            <combobox value="" vflex="1" width="75px">
+            <combobox mold="rounded" vflex="1" width="75px">
                 <comboitem label="apple"/>
                 <comboitem label="banana"/>
             </combobox>
-            <combobox value="" vflex="1" width="120px">
+            <combobox mold="rounded" vflex="1" width="120px">
                 <comboitem label="apple"/>
                 <comboitem label="banana"/>
             </combobox>
@@ -55,15 +55,15 @@
     <window border="normal" height="360px"
         title="minimum Flex: [Combobox, Vbox, rounded]" width="480px">
         <vbox height="200px" hflex="min">
-            <combobox hflex="1" value="" vflex="1">
+            <combobox hflex="1" mold="rounded" vflex="1">
                 <comboitem label="apple"/>
                 <comboitem label="banana"/>
             </combobox>
-            <combobox value="" vflex="1" width="75px">
+            <combobox mold="rounded" vflex="1" width="75px">
                 <comboitem label="apple"/>
                 <comboitem label="banana"/>
             </combobox>
-            <combobox value="" vflex="1" width="120px">
+            <combobox mold="rounded" vflex="1" width="120px">
                 <comboitem label="apple"/>
                 <comboitem label="banana"/>
             </combobox>

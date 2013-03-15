@@ -1,19 +1,19 @@
 <zk><hbox>
     <window border="normal" height="360px"
-        title="minimum Flex: [Colorbox, Hlayout]" width="480px">
-        <hlayout vflex="min" width="200px">
+        title="minimum Flex: [Colorbox, Vlayout]" width="480px">
+        <vlayout height="200px" hflex="min">
             <colorbox hflex="1" vflex="1"/>
-            <colorbox height="60px" hflex="1"/>
-            <colorbox height="100px" hflex="1"/>
-        </hlayout>
+            <colorbox vflex="1" width="75px"/>
+            <colorbox vflex="1" width="120px"/>
+        </vlayout>
     </window>
     <window border="normal" height="360px"
-        title="minimum Flex: [Colorbox, Hbox]" width="480px">
-        <hbox vflex="min" width="200px">
+        title="minimum Flex: [Colorbox, Vbox]" width="480px">
+        <vbox height="200px" hflex="min">
             <colorbox hflex="1" vflex="1"/>
-            <colorbox height="60px" hflex="1"/>
-            <colorbox height="100px" hflex="1"/>
-        </hbox>
+            <colorbox vflex="1" width="75px"/>
+            <colorbox vflex="1" width="120px"/>
+        </vbox>
     </window>
 </hbox>
 <hbox>

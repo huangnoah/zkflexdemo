@@ -18,20 +18,20 @@
 </hbox>
 <hbox>
     <window border="normal" height="360px"
-        title="minimum Flex: [Decimalbox, Vlayout, rounded]" width="480px">
-        <vlayout height="200px" hflex="min">
-            <decimalbox hflex="1" value="1111111111111" vflex="1"/>
-            <decimalbox value="1111111111111" vflex="1" width="75px"/>
-            <decimalbox value="1111111111111" vflex="1" width="120px"/>
-        </vlayout>
+        title="minimum Flex: [Decimalbox, Hlayout, rounded]" width="480px">
+        <hlayout vflex="min" width="200px">
+            <decimalbox hflex="1" mold="rounded" value="1111111111111" vflex="1"/>
+            <decimalbox height="60px" hflex="1" mold="rounded" value="1111111111111"/>
+            <decimalbox height="100px" hflex="1" mold="rounded" value="1111111111111"/>
+        </hlayout>
     </window>
     <window border="normal" height="360px"
-        title="minimum Flex: [Decimalbox, Vbox, rounded]" width="480px">
-        <vbox height="200px" hflex="min">
-            <decimalbox hflex="1" value="1111111111111" vflex="1"/>
-            <decimalbox value="1111111111111" vflex="1" width="75px"/>
-            <decimalbox value="1111111111111" vflex="1" width="120px"/>
-        </vbox>
+        title="minimum Flex: [Decimalbox, Hbox, rounded]" width="480px">
+        <hbox vflex="min" width="200px">
+            <decimalbox hflex="1" mold="rounded" value="1111111111111" vflex="1"/>
+            <decimalbox height="60px" hflex="1" mold="rounded" value="1111111111111"/>
+            <decimalbox height="100px" hflex="1" mold="rounded" value="1111111111111"/>
+        </hbox>
     </window>
 </hbox>
 </zk>

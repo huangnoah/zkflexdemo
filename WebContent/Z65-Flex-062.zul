@@ -1,19 +1,19 @@
 <zk><hbox>
     <window border="normal" height="360px"
-        title="minimum Flex: [Chosenbox, Hlayout]" width="480px">
-        <hlayout vflex="min" width="200px">
+        title="minimum Flex: [Chosenbox, Vlayout]" width="480px">
+        <vlayout height="200px" hflex="min">
             <chosenbox hflex="1" vflex="1"/>
-            <chosenbox height="60px" hflex="1"/>
-            <chosenbox height="100px" hflex="1"/>
-        </hlayout>
+            <chosenbox vflex="1" width="75px"/>
+            <chosenbox vflex="1" width="120px"/>
+        </vlayout>
     </window>
     <window border="normal" height="360px"
-        title="minimum Flex: [Chosenbox, Hbox]" width="480px">
-        <hbox vflex="min" width="200px">
+        title="minimum Flex: [Chosenbox, Vbox]" width="480px">
+        <vbox height="200px" hflex="min">
             <chosenbox hflex="1" vflex="1"/>
-            <chosenbox height="60px" hflex="1"/>
-            <chosenbox height="100px" hflex="1"/>
-        </hbox>
+            <chosenbox vflex="1" width="75px"/>
+            <chosenbox vflex="1" width="120px"/>
+        </vbox>
     </window>
 </hbox>
 <hbox>

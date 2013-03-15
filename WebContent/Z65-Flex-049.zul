@@ -2,7 +2,7 @@
     <window border="normal" height="360px"
         title="minimum Flex: [Bandbox, Hlayout]" width="480px">
         <hlayout vflex="min" width="200px">
-            <bandbox hflex="1" value="" vflex="1">
+            <bandbox hflex="1" vflex="1">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -16,7 +16,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-            <bandbox height="60px" hflex="1" value="">
+            <bandbox height="60px" hflex="1">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -30,7 +30,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-            <bandbox height="100px" hflex="1" value="">
+            <bandbox height="100px" hflex="1">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -49,7 +49,7 @@
     <window border="normal" height="360px"
         title="minimum Flex: [Bandbox, Hbox]" width="480px">
         <hbox vflex="min" width="200px">
-            <bandbox hflex="1" value="" vflex="1">
+            <bandbox hflex="1" vflex="1">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -63,7 +63,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-            <bandbox height="60px" hflex="1" value="">
+            <bandbox height="60px" hflex="1">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -77,7 +77,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-            <bandbox height="100px" hflex="1" value="">
+            <bandbox height="100px" hflex="1">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -96,9 +96,9 @@
 </hbox>
 <hbox>
     <window border="normal" height="360px"
-        title="minimum Flex: [Bandbox, Vlayout, rounded]" width="480px">
-        <vlayout height="200px" hflex="min">
-            <bandbox hflex="1" value="" vflex="1">
+        title="minimum Flex: [Bandbox, Hlayout, rounded]" width="480px">
+        <hlayout vflex="min" width="200px">
+            <bandbox hflex="1" mold="rounded" vflex="1">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -112,7 +112,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-            <bandbox value="" vflex="1" width="75px">
+            <bandbox height="60px" hflex="1" mold="rounded">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -126,7 +126,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-            <bandbox value="" vflex="1" width="120px">
+            <bandbox height="100px" hflex="1" mold="rounded">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -140,12 +140,12 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-        </vlayout>
+        </hlayout>
     </window>
     <window border="normal" height="360px"
-        title="minimum Flex: [Bandbox, Vbox, rounded]" width="480px">
-        <vbox height="200px" hflex="min">
-            <bandbox hflex="1" value="" vflex="1">
+        title="minimum Flex: [Bandbox, Hbox, rounded]" width="480px">
+        <hbox vflex="min" width="200px">
+            <bandbox hflex="1" mold="rounded" vflex="1">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -159,7 +159,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-            <bandbox value="" vflex="1" width="75px">
+            <bandbox height="60px" hflex="1" mold="rounded">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -173,7 +173,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-            <bandbox value="" vflex="1" width="120px">
+            <bandbox height="100px" hflex="1" mold="rounded">
                 <bandpopup>
                     <vbox>
                         <listbox width="200px">
@@ -187,7 +187,7 @@
                     </vbox>
                 </bandpopup>
             </bandbox>
-        </vbox>
+        </hbox>
     </window>
 </hbox>
 </zk>

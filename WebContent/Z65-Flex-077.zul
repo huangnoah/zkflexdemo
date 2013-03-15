@@ -18,15 +18,15 @@
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Datebox, Hlayout, rounded]" width="480px">
         <hlayout height="200px" width="200px">
-            <datebox hflex="1"/>
-            <datebox hflex="2"/>
+            <datebox hflex="1" mold="rounded"/>
+            <datebox hflex="2" mold="rounded"/>
         </hlayout>
     </window>
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Datebox, Hbox, rounded]" width="480px">
         <hbox height="200px" width="200px">
-            <datebox hflex="1"/>
-            <datebox hflex="2"/>
+            <datebox hflex="1" mold="rounded"/>
+            <datebox hflex="2" mold="rounded"/>
         </hbox>
     </window>
 </hbox>

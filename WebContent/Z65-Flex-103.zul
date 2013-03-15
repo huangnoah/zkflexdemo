@@ -18,20 +18,20 @@
 </hbox>
 <hbox>
     <window border="normal" height="360px"
-        title="minimum Flex: [Longbox, Vlayout, rounded]" width="480px">
-        <vlayout height="200px" hflex="min">
-            <longbox hflex="1" value="1111111111111" vflex="1"/>
-            <longbox value="1111111111111" vflex="1" width="75px"/>
-            <longbox value="1111111111111" vflex="1" width="120px"/>
-        </vlayout>
+        title="minimum Flex: [Longbox, Hlayout, rounded]" width="480px">
+        <hlayout vflex="min" width="200px">
+            <longbox hflex="1" mold="rounded" value="1111111111111" vflex="1"/>
+            <longbox height="60px" hflex="1" mold="rounded" value="1111111111111"/>
+            <longbox height="100px" hflex="1" mold="rounded" value="1111111111111"/>
+        </hlayout>
     </window>
     <window border="normal" height="360px"
-        title="minimum Flex: [Longbox, Vbox, rounded]" width="480px">
-        <vbox height="200px" hflex="min">
-            <longbox hflex="1" value="1111111111111" vflex="1"/>
-            <longbox value="1111111111111" vflex="1" width="75px"/>
-            <longbox value="1111111111111" vflex="1" width="120px"/>
-        </vbox>
+        title="minimum Flex: [Longbox, Hbox, rounded]" width="480px">
+        <hbox vflex="min" width="200px">
+            <longbox hflex="1" mold="rounded" value="1111111111111" vflex="1"/>
+            <longbox height="60px" hflex="1" mold="rounded" value="1111111111111"/>
+            <longbox height="100px" hflex="1" mold="rounded" value="1111111111111"/>
+        </hbox>
     </window>
 </hbox>
 </zk>
