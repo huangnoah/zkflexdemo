@@ -1,0 +1,37 @@
+<zk><hbox>
+    <window border="normal" height="360px"
+        title="minimum Flex: [Chosenbox, Hlayout]" width="480px">
+        <hlayout vflex="min" width="200px">
+            <chosenbox hflex="1" vflex="1"/>
+            <chosenbox height="60px" hflex="1"/>
+            <chosenbox height="100px" hflex="1"/>
+        </hlayout>
+    </window>
+    <window border="normal" height="360px"
+        title="minimum Flex: [Chosenbox, Hbox]" width="480px">
+        <hbox vflex="min" width="200px">
+            <chosenbox hflex="1" vflex="1"/>
+            <chosenbox height="60px" hflex="1"/>
+            <chosenbox height="100px" hflex="1"/>
+        </hbox>
+    </window>
+</hbox>
+<hbox>
+    <window border="normal" height="360px"
+        title="minimum Flex: [Chosenbox, Vlayout, rounded]" width="480px">
+        <vlayout height="200px" hflex="min">
+            <chosenbox hflex="1" vflex="1"/>
+            <chosenbox vflex="1" width="75px"/>
+            <chosenbox vflex="1" width="120px"/>
+        </vlayout>
+    </window>
+    <window border="normal" height="360px"
+        title="minimum Flex: [Chosenbox, Vbox, rounded]" width="480px">
+        <vbox height="200px" hflex="min">
+            <chosenbox hflex="1" vflex="1"/>
+            <chosenbox vflex="1" width="75px"/>
+            <chosenbox vflex="1" width="120px"/>
+        </vbox>
+    </window>
+</hbox>
+</zk>

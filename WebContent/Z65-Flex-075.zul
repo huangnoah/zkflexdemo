@@ -1,0 +1,17 @@
+<zk><hbox>
+    <window border="normal" height="360px"
+        title="Input HFlex Case: [Combobox]" width="480px">
+        <combobox hflex="1" value="">
+            <comboitem label="apple"/>
+            <comboitem label="banana"/>
+        </combobox>
+    </window>
+    <window border="normal" height="360px"
+        title="Input HFlex Case: [Combobox, rounded]" width="480px">
+        <combobox hflex="1" value="">
+            <comboitem label="apple"/>
+            <comboitem label="banana"/>
+        </combobox>
+    </window>
+</hbox>
+</zk>
