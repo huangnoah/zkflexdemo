@@ -51,10 +51,10 @@ public class Main {
 
 			outputCase(new MinFlexCase(inp, "Hlayout", false), 
 					   new MinFlexCase(inp, "Hbox", false), 
-					   new MinFlexCase(inp, "Vlayout", true),
-					   new MinFlexCase(inp, "Vbox", true));
-			outputCase(new MinFlexCase(inp, "Hlayout", false), 
-					   new MinFlexCase(inp, "Hbox", false), 
+					   new MinFlexCase(inp, "Hlayout", true),
+					   new MinFlexCase(inp, "Hbox", true));
+			outputCase(new MinFlexCase(inp, "Vlayout", false), 
+					   new MinFlexCase(inp, "Vbox", false), 
 					   new MinFlexCase(inp, "Vlayout", true),
 					   new MinFlexCase(inp, "Vbox", true));
 
