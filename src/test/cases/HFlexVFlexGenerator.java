@@ -263,7 +263,7 @@ public class HFlexVFlexGenerator {
 	}
 
 	public static Window generateView(String title) {
-		return generateView(title, "400px", "300px");
+		return generateView(title, "480px", "360px");
 	}
 
 	private static Window generateView(String title, String width, String height) {
