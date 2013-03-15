@@ -138,7 +138,6 @@ public class HFlexVFlexGenerator {
 			return new Calendar();
 		} else if (chosenbox.equalsIgnoreCase(comp)) {
 			Chosenbox chosenbox = new Chosenbox();
-			chosenbox.setModel(generateListModel());
 			return chosenbox;
 		} else if (colorbox.equalsIgnoreCase(comp)) {
 			return new Colorbox();
@@ -228,11 +227,6 @@ public class HFlexVFlexGenerator {
 			}
 			return component;
 		}
-	}
-
-	private static ListModelList<String> generateListModel() {
-		return new ListModelList<String>(Arrays.asList(new String[] { "apple",
-				"banana" }));
 	}
 
 	public static HtmlBasedComponent generateContent(String comp, boolean rounded,

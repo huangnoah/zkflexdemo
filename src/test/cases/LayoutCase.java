@@ -13,9 +13,9 @@ import org.zkoss.zk.ui.HtmlBasedComponent;
 
 public class LayoutCase extends FlexCase {
 
-	public LayoutCase(String comp, String testcase, boolean rounded)
+	public LayoutCase(String comp, String layout, boolean rounded)
 			throws Exception {
-		this(comp, testcase, testcase.startsWith("V") ? "vflex" : "hflex",
+		this(comp, layout, layout.startsWith("V") ? "vflex" : "hflex",
 				rounded);
 	}
 
