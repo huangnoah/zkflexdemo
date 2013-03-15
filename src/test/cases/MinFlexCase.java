@@ -13,9 +13,9 @@ import org.zkoss.zk.ui.HtmlBasedComponent;
 
 public class MinFlexCase extends FlexCase {
 
-	public MinFlexCase(String comp, String testcase, boolean rounded)
+	public MinFlexCase(String comp, String layout, boolean rounded)
 			throws Exception {
-		this(comp, testcase, testcase.startsWith("V") ? "hflex" : "vflex",
+		this(comp, layout, layout.startsWith("V") ? "hflex" : "vflex",
 				rounded);
 	}
 
