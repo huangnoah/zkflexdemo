@@ -66,8 +66,7 @@ public class XMLConverter {
 	private static void setAttrIfExists(Element elem, String attrName,
 			Object val) {
 		if (val != null) {
-			Attribute attr = new Attribute(attrName, val.toString());
-			elem.addAttribute(attr);
+			elem.addAttribute(new Attribute(attrName, val.toString()));
 		}
 	}
 
