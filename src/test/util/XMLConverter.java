@@ -38,6 +38,7 @@ public class XMLConverter {
 		setAttrIfExists(elem, "height", comp.getHeight());
 		setAttrIfExists(elem, "width", comp.getWidth());
 		setAttrIfExists(elem, "style", comp.getStyle());
+		setAttrIfExists(elem, "mold", comp.getMold());
 
 		if (comp instanceof Label) {
 			setAttrIfExists(elem, "value", ((Label) comp).getValue());
@@ -66,7 +67,9 @@ public class XMLConverter {
 	private static void setAttrIfExists(Element elem, String attrName,
 			Object val) {
 		if (val != null) {
-			elem.addAttribute(new Attribute(attrName, val.toString()));
+			String value = val.toString();
+			if (value.length() > 0 && !"default|vertical|horizontal".contains(value))
+				elem.addAttribute(new Attribute(attrName, value));
 		}
 	}
 
