@@ -32,7 +32,9 @@ public class LayoutCase extends FlexCase {
 		Map<String, String> attrs2 = new HashMap<String, String>();
 		if ("hflex".equalsIgnoreCase(flex)) {
 			attrs1.put("hflex", "1");
+			attrs1.put("vflex", "1");
 			attrs2.put("hflex", "2");
+			attrs2.put("vflex", "1");
 		} else {
 			attrs1.put("hflex", "1");
 			attrs1.put("vflex", "1");

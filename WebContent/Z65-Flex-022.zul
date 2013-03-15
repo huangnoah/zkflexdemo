@@ -2,7 +2,7 @@
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Tabbox, Hlayout]" width="480px">
         <hlayout height="200px" width="200px">
-            <tabbox hflex="1">
+            <tabbox hflex="1" vflex="1">
                 <tabs>
                     <tab label="case"/>
                 </tabs>
@@ -14,7 +14,7 @@
                     </tabpanel>
                 </tabpanels>
             </tabbox>
-            <tabbox hflex="2">
+            <tabbox hflex="2" vflex="1">
                 <tabs>
                     <tab label="case"/>
                 </tabs>
@@ -31,7 +31,7 @@
     <window border="normal" height="360px"
         title="Proportional Flexibility: [Tabbox, Hbox]" width="480px">
         <hbox height="200px" width="200px">
-            <tabbox hflex="1">
+            <tabbox hflex="1" vflex="1">
                 <tabs>
                     <tab label="case"/>
                 </tabs>
@@ -43,7 +43,7 @@
                     </tabpanel>
                 </tabpanels>
             </tabbox>
-            <tabbox hflex="2">
+            <tabbox hflex="2" vflex="1">
                 <tabs>
                     <tab label="case"/>
                 </tabs>
