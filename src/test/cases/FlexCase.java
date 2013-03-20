@@ -21,7 +21,7 @@ public class FlexCase {
 		XMLConverter conv = new XMLConverter(comp);
 		xml = conv.toXML();
 		rawHTML = XMLConverter.toRawHTML(xml);
-		codeView = generateCodeView(comp, rawHTML);
+		codeView = generateCodeView(rawHTML);
 	}
 
 	public Window getView() {

@@ -9,17 +9,21 @@ import nu.xom.Element;
 
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.HtmlBasedComponent;
+import org.zkoss.zul.Cell;
 import org.zkoss.zul.Decimalbox;
 import org.zkoss.zul.Doublebox;
 import org.zkoss.zul.Doublespinner;
 import org.zkoss.zul.Intbox;
 import org.zkoss.zul.Label;
+import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Longbox;
 import org.zkoss.zul.Panelchildren;
 import org.zkoss.zul.Spinner;
 import org.zkoss.zul.Textbox;
+import org.zkoss.zul.Treecell;
 import org.zkoss.zul.Window;
 import org.zkoss.zul.impl.LabelElement;
+import org.zkoss.zul.impl.MeshElement;
 
 public class XMLConverter {
 
@@ -35,6 +39,19 @@ public class XMLConverter {
 			setAttrIfExists(elem, "hflex", comp.getHflex());
 			setAttrIfExists(elem, "vflex", comp.getVflex());
 		}
+		
+		if(comp instanceof Cell) {
+			setAttrIfExists(elem, "colspan", ((Cell) comp).getColspan());
+		} else if(comp instanceof Listcell) {
+			setAttrIfExists(elem, "span", ((Listcell) comp).getSpan());
+		} else if(comp instanceof Treecell) {
+			setAttrIfExists(elem, "span", ((Treecell) comp).getSpan());
+		}
+		
+		if(comp instanceof MeshElement) {
+			setAttrIfExists(elem, "sizedByContent", ((MeshElement) comp).isSizedByContent());
+		}
+		
 		setAttrIfExists(elem, "height", comp.getHeight());
 		setAttrIfExists(elem, "width", comp.getWidth());
 		setAttrIfExists(elem, "style", comp.getStyle());
@@ -68,6 +85,12 @@ public class XMLConverter {
 			Object val) {
 		if (val != null) {
 			String value = val.toString();
+			if ("span".equalsIgnoreCase(attrName) && value.equalsIgnoreCase("1")) {
+				return;
+			}
+			if ("sizedByContent".equalsIgnoreCase(attrName) && value.equalsIgnoreCase("false")) {
+				return;
+			}
 			if (value.length() > 0 && !"default|vertical|horizontal".contains(value))
 				elem.addAttribute(new Attribute(attrName, value));
 		}

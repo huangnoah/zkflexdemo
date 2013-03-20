@@ -299,7 +299,7 @@ public class HFlexVFlexGenerator {
 		}
 	}
 
-	public static Window generateCodeView(HtmlBasedComponent layout, String code) {
+	public static Window generateCodeView(String code) {
 		Window codeView = generateView("Code View", "600px", "450px");
 		Html html = new Html();
 		html.setContent("<code>" + code + "</code>");

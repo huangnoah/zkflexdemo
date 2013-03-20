@@ -29,7 +29,6 @@ public class Composer extends SelectorComposer {
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
-		appendCase(new VFlexCase("Div", false));
 	}
 
 	private void reset() {
